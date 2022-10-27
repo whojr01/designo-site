@@ -1,0 +1,7 @@
+@mixin setFont($size, $lh: $size, $ls: 0, $fw: $fw-regular, $family: $ff-primary) {
+  font-size: $size;
+  line-height: $lh;
+  letter-spacing: $ls;
+  font-weight: $fw;
+  font-family: $family;
+}

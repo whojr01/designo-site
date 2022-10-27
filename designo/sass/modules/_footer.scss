@@ -1,0 +1,271 @@
+.footer {
+  background-color: $clr-primary-black;
+  color: $clr-primary-white;
+  margin: 311px auto 0;
+  position: relative;
+  text-align: center;
+  width: $mb-max-width;
+
+  .talk {
+    background-color: $clr-primary-color;
+    overflow: hidden;
+    padding-inline: 24px;
+    position: absolute;
+    top: -190px;
+    left: 25px;
+    width: 327px;
+    z-index: 5;
+
+    h2 {
+      margin-top: $size-64;
+      @include setFont(32px, 36px, 0, $fw-medium);
+    }
+
+    p {
+      margin-top: $size-16;
+      @include setFont(15px, 25px);
+    }
+
+    .btn {
+      padding: 17.17px 18.48px;
+    }
+
+    .circles-img {
+      top: -102px;
+      left: -245px;
+      height: 584px;
+      position: absolute;
+      width: 876px;
+      z-index: -1;
+    }
+
+    .foot-leaf-img {
+      display: none;
+    }
+  }
+
+  .navigation {
+    position: relative;
+    padding-top: 253px;
+
+    ul {
+      list-style: none;
+      padding-top: $size-65;
+      text-decoration: none;
+      @include setFont(14px, 14px, 2px);
+    }
+
+    li {
+      padding: 0 $size-24 $size-32;
+      text-transform: uppercase;
+    }
+
+    li:last-child {
+      padding: 0 $size-24;
+    }
+
+    li:focus,
+    li:hover {
+      letter-spacing: 2px;
+      text-decoration-line: underline;
+    }
+
+    img {
+      height: 27px;
+      width: 202px;
+      margin-inline: auto;
+    }
+
+    hr {
+      position: absolute;
+      color: $clr-primary-white;
+      height: 1px;
+      margin-top: $size-32;
+      top: 275px;
+      left: $size-24;
+      opacity: 0.1;
+      width: 327px;
+    }
+  }
+
+  .location {
+    padding-top: $size-40;
+  }
+
+  .communication,
+  .location {
+    p:first-child {
+      font-weight: 700;
+    }
+  }
+
+  .communication {
+    margin-top: $size-40;
+  }
+
+  .social {
+    display: flex;
+    gap: $size-16;
+    justify-content: center;
+    margin-top: $size-48;
+    padding-bottom: $size-40;
+  }
+
+  .btn {
+    height: 56px;
+    margin-block: $size-32 $size-64;
+  }
+
+  @media only screen and (min-width: $tb-max-width) {
+    width: $tb-max-width;
+
+    .talk {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      width: 690px;
+      top: -285px;
+      left: 39px;
+
+      h2 {
+        width: 335px;
+        @include setFont(40px, 40px, 0, $fw-medium);
+      }
+
+      p {
+        width: 450px;
+        @include setFont($fs-dt-text, $lh-dt-text, $ls-dt-text);
+      }
+
+      .circles-img {
+        left: -24px;
+      }
+    }
+
+    .navigation {
+      margin-top: 467px;
+      padding-top: 166px;
+      // padding-inline: $size-40;
+      width: 100%;
+      height: 100%;
+
+      .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      hr {
+        width: 690px;
+        top: 201px;
+      }
+
+      .work {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $size-16;
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      li {
+        padding: 0;
+        margin: 0;
+      }
+
+      li:last-child {
+        padding: 0;
+      }
+
+      img {
+        margin: 0;
+      }
+    }
+
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      padding: $size-80 $size-40;
+      text-align: left;
+      width: 100%;
+    }
+    .social {
+      margin: 0;
+      padding: 0;
+      align-items: flex-end;
+    }
+  }
+
+  @media only screen and (min-width: $dt-max-width) {
+    width: $dt-max-width;
+    margin: 357px auto 0;
+
+    .sb-margin {
+      margin-top: 0;
+    }
+
+    .talk {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 1111px;
+      height: 292px;
+      text-align: left;
+      left: 165px;
+      top: -195px;
+
+      h2 {
+        width: 268px;
+        margin: 72px 95px 0;
+      }
+
+      p {
+        width: 459px;
+        margin: 16px 95px 46px;
+      }
+
+      .btn {
+        margin: 118px 96px;
+      }
+
+      .circles-img {
+        left: 200px;
+        top: -130px;
+      }
+    }
+
+    .navigation {
+      margin-top: 0;
+      width: $dt-max-width;
+      padding-inline: 125px;
+
+      hr {
+        width: 1111px;
+        left: 165px;
+      }
+    }
+
+    .menu {
+      width: 100%;
+    }
+
+    .menu ul {
+      margin-right: 0 !important;
+    }
+
+    .contact {
+      padding: 72px 165px;
+      justify-content: normal;
+    }
+
+    .communication {
+      padding-left: 192px;
+    }
+
+    .social {
+      padding-left: 360px;
+    }
+  }
+}

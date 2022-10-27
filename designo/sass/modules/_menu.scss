@@ -1,0 +1,188 @@
+// $clr-primary-white
+// $max-width
+//
+
+.menu {
+  color: $clr-primary-white;
+
+  img {
+    width: 202px;
+    height: 27px;
+  }
+
+  .menu_container {
+    align-items: center;
+    background-color: $clr-primary-white;
+    display: flex;
+    height: 96px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+  }
+
+  #menuToogle {
+    opacity: 0;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+    transition: menuItems 500s ease-in-out;
+  }
+
+  .menuHamburger {
+    background-color: $clr-primary-black;
+    border-radius: 3px;
+    height: 4px;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    transition: all 0.5s ease;
+    width: 29px;
+    z-index: 10;
+  }
+
+  .menuHamburger::before,
+  .menuHamburger::after {
+    background: $clr-primary-black;
+    border-radius: 3px;
+    content: "";
+    height: 4px;
+    position: absolute;
+    transition: all 0.5s ease;
+    width: 29px;
+  }
+
+  .menuHamburger::before {
+    transform: translateY(-6px);
+  }
+
+  .menuHamburger::after {
+    transform: translateY(6px);
+  }
+
+  #menuItems {
+    background-color: $clr-primary-black;
+    color: $clr-primary-white;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: -1000px; /* Push the menu items out of view */
+    transition: all 0.7s ease-out;
+    width: 100%;
+    z-index: 10;
+    @include setFont($fs-mb-menu, $lh-mb-menu, $ls-mb-menu);
+  }
+
+  #menuItems ul {
+    list-style-type: none;
+    padding-block: $size-48;
+  }
+
+  #menuItems li {
+    padding: 0 $size-24 $size-32;
+    text-transform: uppercase;
+  }
+
+  #menuItems li:last-child {
+    padding: 0 $size-24;
+  }
+
+  #menuItems li:focus,
+  #menuItems li:hover {
+    letter-spacing: 2px;
+    text-decoration-line: underline;
+  }
+
+  #menuItems a {
+    color: $clr-primary-white;
+    text-decoration: none;
+  }
+
+  #menuToogle:checked ~ #menuItems {
+    height: 235px;
+    left: 0;
+    opacity: 1;
+    top: 96px; /* Pull the screen back into view */
+    transition: all 0.7s ease-in;
+    z-index: 10;
+  }
+
+  #menuToogle:checked ~ .menuHamburger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+
+  #menuToogle:checked ~ .menuHamburger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+
+  #menuToogle:checked ~ .menuHamburger {
+    background: transparent;
+    transform: translateX(-50px);
+  }
+
+  #menuToogle input {
+    display: none;
+  }
+
+  .menuOval {
+    position: absolute;
+    width: 640px;
+    height: 640px;
+    left: 0;
+    top: 90px;
+    background: linear-gradient(90deg, rgba(93, 2, 2, 0.0001) 0%, rgba(93, 2, 2, 0.497569) 100%);
+    mix-blend-mode: normal;
+    opacity: 0.31;
+    transform: matrix(0, -1, -1, 0, 0, 0);
+  }
+
+  @media only screen and (min-width: $tb-max-width) {
+    width: $tb-max-width;
+    padding-inline: $size-40;
+
+    #menuToogle,
+    .menuHamburger {
+      display: none;
+    }
+
+    #menuItems {
+      background-color: $clr-primary-white;
+      position: static;
+      opacity: 1;
+      width: inherit;
+      height: inherit;
+    }
+
+    #menuItems ul {
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      margin: 0;
+      gap: $size-42;
+      @include setFont($fs-dt-menu, $lh-dt-menu, $ls-dt-menu);
+    }
+
+    #menuItems li {
+      padding: 0;
+      margin: 0;
+    }
+
+    #menuItems li:last-child {
+      padding: 0;
+    }
+
+    #menuItems a {
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @media only screen and (min-width: $dt-max-width) {
+    width: 1111px;
+    padding-inline: 0;
+  }
+}

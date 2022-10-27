@@ -1,0 +1,352 @@
+body {
+  background-color: $clr-primary-white;
+  @include setFont($fs-mb-text, $lh-mb-text, $ls-mb-text);
+}
+
+.container {
+  margin-inline: auto;
+  max-width: $max-width;
+  outline: 2px solid lime;
+}
+
+.award {
+  background-color: $clr-primary-color;
+  color: $clr-primary-white;
+  height: 843px;
+  overflow: hidden;
+  position: relative;
+
+  .award-content {
+    z-index: 5;
+    h1 {
+      padding: $size-80 $size-24 0;
+    }
+
+    p {
+      padding: $size-14 $size-24 0;
+      @include setFont(15px, 25px);
+    }
+
+    .btn {
+      margin-top: $size-24;
+      padding: 17.17px 24.2875px;
+    }
+  }
+
+  .phone-img {
+    left: 0;
+    position: absolute;
+    top: 434px;
+    z-index: 3;
+
+    img {
+      scale: 1.35;
+    }
+  }
+
+  .circle-img {
+    left: 48px;
+    position: absolute;
+    width: 480px;
+    top: 190px;
+    left: 80px;
+    z-index: 2;
+  }
+}
+
+.projects {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $clr-primary-white;
+
+  &-item {
+    border-radius: $border-radius;
+    height: 250px;
+    margin-bottom: $size-24;
+    width: 327px;
+
+    h2 {
+      margin-bottom: 11.97px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-right: $size-16;
+      text-transform: uppercase;
+      @include setFont(15px, 21.68px, 5px, $fw-medium);
+    }
+  }
+
+  .head-leaf-img {
+    display: none;
+  }
+
+  &-web {
+    background-image: url("../../assets/home/mobile/image-web-design.jpg");
+  }
+
+  &-app {
+    background-image: url("../../assets/home/mobile/image-app-design.jpg");
+  }
+
+  &-graphic {
+    background-image: url("../../assets/home/mobile/image-graphic-design.jpg");
+  }
+}
+
+.values {
+  .img-bg {
+    width: 202px;
+    height: 202px;
+    margin: 0 auto $size-48;
+    background-image: url("../../assets/shared/desktop/bg-pattern-small-circle.svg");
+  }
+
+  h2 {
+    margin-bottom: $size-32;
+    text-transform: uppercase;
+    @include setFont(20px, 26px, 5px, $fw-medium);
+  }
+
+  .foot-leaf-img {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $tb-max-width) {
+  .body {
+    @include setFont($fs-dt-text, $lh-dt-text, $ls-dt-text);
+  }
+
+  h2 {
+    @include setFont($fs-dt-h2, $lh-dt-h2, $ls-dt-h2, $fw-medium);
+  }
+
+  .container {
+    max-width: $tb-max-width;
+  }
+
+  .award {
+    width: 689px;
+    margin-inline: auto;
+
+    & &-content {
+      h1 {
+        padding: $size-60 58px 0;
+        @include setFont($fs-dt-h1, $lh-dt-h1, $ls-dt-h1, $fw-medium);
+      }
+
+      p {
+        width: 445px;
+        padding: 0;
+        margin: 8px 127px 0 117px;
+        @include setFont($fs-dt-text, $lh-dt-text, $ls-dt-text);
+      }
+
+      .btn {
+        margin-top: 19px;
+      }
+    }
+
+    .phone-img {
+      width: 476px;
+      height: auto;
+      left: 100px;
+      top: 380px;
+    }
+
+    .circle-img {
+      width: 480px;
+      top: 185px;
+      left: 225px;
+    }
+  }
+
+  .projects {
+    text-align: center;
+
+    &-col2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-item {
+      width: 689px;
+      height: 200px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      @include setFont(15px, 21.68px, 5px, $fw-medium);
+    }
+
+    &-web {
+      background-image: url("../../assets/home/tablet/image-web-design.jpg");
+    }
+
+    &-app {
+      background-image: url("../../assets/home/tablet/image-app-design.jpg");
+    }
+
+    &-graphic {
+      background-image: url("../../assets/home/tablet/image-graphic-design.jpg");
+    }
+  }
+
+  .values {
+    .value-item {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      gap: $size-48;
+
+      h2 {
+        margin-bottom: $size-16;
+      }
+
+      p {
+        width: 439px;
+      }
+
+      .img-bg {
+        margin: 0;
+        margin-left: $size-40;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $dt-max-width) {
+    .container {
+      max-width: $dt-max-width;
+      padding-inline: 165px;
+    }
+
+    .award {
+      width: 1111px;
+      height: 640px;
+
+      & &-content {
+        margin: 145px 95px;
+        text-align: left;
+        width: inherit;
+
+        h1 {
+          width: 540px;
+          padding: 0;
+        }
+
+        p {
+          width: 445px;
+          margin: 26px 0 0;
+        }
+
+        .btn {
+          margin-top: 40px;
+        }
+      }
+
+      .phone-img {
+        width: 476px;
+        height: auto;
+        left: 632px;
+        top: 86px;
+      }
+
+      .circle-img {
+        top: 0;
+        left: 470px;
+        width: 640px;
+        height: 640px;
+      }
+    }
+
+    .projects {
+      outline: 2px solid brown;
+      flex-direction: row;
+      gap: $size-16;
+      position: relative;
+      align-items: center;
+      justify-content: space-between;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 541px;
+        margin-bottom: 0;
+      }
+
+      &-col1 {
+        height: 640px;
+      }
+
+      &-col2 {
+        .projects-item {
+          height: 308px;
+          gap: $size-24;
+        }
+
+        .projects-item:first-child {
+          margin-bottom: 24px;
+        }
+      }
+
+      .head-leaf-img {
+        position: absolute;
+        bottom: 490px;
+        left: -165px;
+        width: 1006px;
+        height: 594px;
+        z-index: -1;
+        // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+      }
+    }
+
+    .values {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      outline: 2px solid lime;
+
+      .value-item {
+        outline: 2px solid blueviolet;
+        text-align: center;
+        flex-direction: column;
+        width: 350px;
+        margin-top: 0;
+
+        p {
+          width: 350px;
+        }
+
+        .foot-leaf-img {
+          display: block;
+          bottom: -415px;
+          right: -165px;
+          height: 594px;
+          position: absolute;
+          width: 1006px;
+          // opacity: 50.23%;
+          transform: scaleX(-1) scaleY(-1);
+          z-index: -1;
+          // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+        }
+      }
+
+      .img-bg {
+        width: 202px;
+      }
+    }
+  }
+}
