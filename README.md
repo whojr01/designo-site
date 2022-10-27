@@ -1,6 +1,6 @@
 # Frontend Mentor - Designo agency website solution
 
-This is a solution to the [Designo agency website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Designo agency website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -20,6 +20,8 @@ This is a solution to the [Designo agency website challenge on Frontend Mentor](
 
 ## Overview
 
+~
+
 ### The challenge
 
 Users should be able to:
@@ -37,7 +39,7 @@ Users should be able to:
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
@@ -50,42 +52,179 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+To start I downloaded the starter files, created this git repository, copied the readme template, and pushed. So pretty basic start.
+
+What I'm going to do now is to focus on understanding the figma file. The file has desktop, tablet, and mobile design.
+
+**Desktop**
+**Tablets**
+
+- Menu items
+
+  - Size: 14px
+  - Letter Spacing: 2px
+  - line Height: 14px
+  - Uppercase
+  - Regular
+
+- H1 (Award winning)
+
+  - Size: 48px
+  - Line Height: 48px
+  - Letter spacing: 0px
+  - Medium
+
+- H2 ( WEB Design)
+
+  - Size: 40px
+  - Line Height: 48px
+  - Letter Spacing: 2px
+  - Medium
+  - Uppercase
+
+- H3 (Passionate)
+
+  - Size: 20px
+  - Line Height: 26px
+  - Letter Spacing: 5px
+  - Uppercase
+  - Medium
+
+- H4 (View Projects)
+
+  - Size: 15px
+  - Line Height: Auto
+  - Letter Spacing: 5px
+  - Uppercase
+  - Medium
+
+- Body
+
+  - Size: 16
+  - Line Height: 26
+  - Letter Spacing: 0
+  - regular
+
+- Button Text:
+  - Size: 15
+  - Line height: auto
+  - Letter Spacing: 1px
+  - Meduim
+
+**Footer**
+
+- H2 (Let's Talk - footer)
+
+  - Size: 40px
+  - Line Height: 40px
+  - Letter Spacing: 0
+  - Medium
+
+**Mobile**
+
+- Menu items
+
+  - Size: 24px
+  - Letter Spacing: 2px
+  - line Height: 25px
+  - Uppercase
+  - Regular
+
+- H1 (Award winning)
+
+  - Size: 32px
+  - Line Height: 36px
+  - Letter spacing: 0px
+  - Medium
+
+- H2 ( WEB Design)
+
+  - Size: 28px
+  - Line Height: 36px
+  - Letter Spacing: 1.4px
+  - Medium
+  - Uppercase
+
+- H3 (Passionate)
+
+  - Size: 20px
+  - Line Height: 26px
+  - Letter Spacing: 5px
+  - Uppercase
+  - Medium
+
+- H4 (View Projects)
+
+  - Size: 15px
+  - Line Height: Auto
+  - Letter Spacing: 5px
+  - Uppercase
+  - Medium
+
+- Award Body
+
+  - Size: 15
+  - Line Height: 25
+  - Letter Spacing: 0
+  - regular
+
+- Body
+
+  - Size: 16
+  - Line Height: 26
+  - Letter Spacing: 0
+  - regular
+
+- Button Text:
+  - Size: 15
+  - Line height: auto
+  - Letter Spacing: 1px
+  - Meduim
+
+**Footer**
+
+- H2 (Let's Talk - footer)
+
+  - Size: 32px
+  - Line Height: 36px
+  - Letter Spacing: 0
+  - Medium
+
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+HTML
+CSS
+SASS
+Javascript (If needed)
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Well... The organization of the project is first and formost on my mind. I made a decision to implement the mobile menu using CSS specifically the checkbox hack. It works fine bust goes agains the convention of using javascript to control action/state. So IDK I'm likely to change it for other pages since its only a couple of lines of code.
 
-To see how you can add code snippets, see below:
+The current organization needs a few tweaks that will be implemented the next time I push my changes. The current organization is as follows:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+All of the CSS is rolled up into style.css as generated by SASS. I haven't implemented any compression or tree shaking yet in my gulpfile. So the style.css includes:
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+**style.css**
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- \_css-reset.scss - Contains well... reset of properties
+- \_mixins.scss - Contains setFont mixin. The only one so far
+- \_variables.scss - Contains variables and utility classes
+- \_menu.scss - Contains only the menu.
+- \_home.scss - Contains only the styles used on the home page
+- \_footer.scss - Contains only the footer
+
+So the **style.css** will be renamed to home.css and only contain styles specific to building the home page. So this will be renamed to **home.css** and each page will have its own css file named after it.
+
+So I'm likely to elevate **\_menu.css** and **\_footer.css** so I don't have redunant copies of the menu in all the files. This means that I will have to create a new top level file that is included along with **home.css**.
+
+The **home.css** contains the complete styles for mobile, tablet, and desktop. Within the home page there are a number of syles that should become components and if that occurs then maybe I will further breakdown the heirachy I'm roughly sketching out here.
+
+I've run into a few cases where my code isn't as dry or efficient as it needs to be. I am working on it. I will likely take time before I start the next page to work the organization and cleaning up the code so I can learn where I am coming up short.
+
+**Accessability**... Yeah it's on my mind and I have a lot of research to do to incorporate it correctly. This will likely impact favorably the decision to implement a javascript menu. I will also have to re-evaluate the types of elements I am using for flow control and UX.
 
 ### Continued development
 
