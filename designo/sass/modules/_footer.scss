@@ -5,6 +5,7 @@
   position: relative;
   text-align: center;
   width: $mb-max-width;
+  outline: 2px solid lime;
 
   .talk {
     background-color: $clr-primary-color;
@@ -118,6 +119,7 @@
 
   @media only screen and (min-width: $tb-max-width) {
     width: $tb-max-width;
+    max-width: $tb-max-width;
 
     .talk {
       align-items: center;
@@ -145,14 +147,16 @@
     .navigation {
       margin-top: 467px;
       padding-top: 166px;
-      // padding-inline: $size-40;
-      width: 100%;
-      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
       .menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-left: 40px;
+        width: 689px;
       }
 
       hr {
@@ -162,9 +166,10 @@
 
       .work {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
         gap: $size-16;
+        width: inherit;
       }
 
       ul {
@@ -201,6 +206,7 @@
 
   @media only screen and (min-width: $dt-max-width) {
     width: $dt-max-width;
+    max-width: $dt-max-width;
     margin: 357px auto 0;
 
     .sb-margin {
@@ -238,23 +244,20 @@
 
     .navigation {
       margin-top: 0;
-      width: $dt-max-width;
-      padding-inline: 125px;
+      margin-inline: auto;
+      width: 1111px;
 
       hr {
         width: 1111px;
-        left: 165px;
+        left: 0;
+        top: 300px;
+      }
+
+      .menu {
+        width: 1111px;
+        margin-left: 0;
       }
     }
-
-    .menu {
-      width: 100%;
-    }
-
-    .menu ul {
-      margin-right: 0 !important;
-    }
-
     .contact {
       padding: 72px 165px;
       justify-content: normal;

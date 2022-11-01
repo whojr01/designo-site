@@ -1,0 +1,246 @@
+.container {
+  margin-inline: auto;
+  width: $mb-max-width;
+  max-width: $mb-max-width;
+  outline: 2px solid lime;
+}
+
+.webdesign {
+  height: 320px;
+  background-color: $clr-primary-color;
+  color: $clr-primary-white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  h1 {
+    @include setFont(32px, 36px, 0, $fw-medium);
+  }
+
+  p {
+    margin-top: $size-24;
+    width: 327px;
+    @include setFont(15px, 25px);
+  }
+
+  .circle-img {
+    position: absolute;
+    width: 876px;
+    height: 584px;
+    top: 0;
+    right: 0;
+  }
+}
+
+.webapps {
+  margin-top: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .webcard {
+    background-color: $clr-secondary-accent;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+
+    h2 {
+      color: $clr-primary-color;
+      text-transform: uppercase;
+      @include setFont(20px, 26px, 5px, $fw-medium);
+    }
+
+    p {
+      margin-top: $size-16;
+      @include setFont(16px, 26px);
+    }
+
+    img {
+      border-radius: 15px 15px 0 0;
+    }
+
+    .webdesc {
+      padding: 32px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .head-leaf-img {
+      display: none;
+    }
+  }
+}
+
+.projects {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $clr-primary-white;
+  //   margin-inline: 24px;
+
+  &-item {
+    border-radius: $border-radius;
+    height: 250px;
+    margin-bottom: $size-24;
+    // width: 327px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      margin-bottom: 11.97px;
+      text-transform: uppercase;
+    }
+
+    p {
+      //   margin-right: $size-16;
+      text-transform: uppercase;
+      @include setFont(15px, 21.68px, 5px, $fw-medium);
+    }
+  }
+
+  &-web {
+    width: 100%;
+    background-image: url("../../assets/home/mobile/image-web-design.jpg");
+  }
+
+  &-app {
+    width: 100%;
+    background-image: url("../../assets/home/mobile/image-app-design.jpg");
+    background-size: cover;
+  }
+
+  &-graphic {
+    width: 100%;
+    background-image: url("../../assets/home/mobile/image-graphic-design.jpg");
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: $tb-max-width) {
+  .container {
+    width: $tb-max-width;
+    max-width: $tb-max-width;
+    margin-inline: auto;
+    padding-inline: $size-40;
+  }
+
+  .webdesign {
+    height: 252px;
+
+    h1 {
+      @include setFont($fs-dt-h1, $lh-dt-h1, $ls-dt-h1, $fw-medium);
+    }
+
+    .circle-img {
+      position: absolute;
+      width: 689px;
+      height: 252px;
+      top: -100px;
+      left: 75px;
+    }
+  }
+
+  .webapps {
+    .webcard {
+      display: flex;
+      width: 689px;
+      height: 310px;
+      border-radius: 0 15px 15px 0;
+
+      .webimg {
+        width: 339px;
+      }
+
+      img {
+        border-radius: 15px 0 0 15px;
+      }
+
+      .webdesc {
+        margin: auto;
+        text-align: center;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $dt-max-width) {
+  .container {
+    width: $dt-max-width;
+    max-width: $dt-max-width;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  .webdesign {
+    margin-inline: auto;
+    width: 1111px;
+
+    .circle-img {
+      position: absolute;
+      width: 1111px;
+      height: 252px;
+      top: -160px;
+      left: 240px;
+    }
+  }
+
+  .webapps {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 0 0 15px 15px;
+    column-gap: 32px;
+    row-gap: 30px;
+    width: 100%;
+
+    .webcard {
+      flex-direction: column;
+      width: 350px;
+      height: 100%;
+      margin-top: 0;
+
+      .webimg {
+        width: 350px;
+      }
+
+      img {
+        border-radius: 15px 15px 0 0;
+      }
+      .webdesc {
+        width: 100%;
+        padding-inline: 32px;
+      }
+    }
+
+    .head-leaf-img {
+      position: absolute;
+      top: -225px;
+      left: 0;
+      width: 1006px;
+      height: 594px;
+      z-index: -1;
+      //   filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    }
+  }
+
+  .projects {
+    flex-direction: row;
+    gap: 30px;
+
+    &-item {
+      height: 308px;
+      width: 541px;
+      margin-bottom: 0;
+    }
+  }
+}

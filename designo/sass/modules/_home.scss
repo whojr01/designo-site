@@ -223,130 +223,130 @@ body {
       }
     }
   }
+}
 
-  @media only screen and (min-width: $dt-max-width) {
-    .container {
-      max-width: $dt-max-width;
-      padding-inline: 165px;
+@media only screen and (min-width: $dt-max-width) {
+  .container {
+    max-width: $dt-max-width;
+    padding-inline: 165px;
+  }
+
+  .award {
+    width: 1111px;
+    height: 640px;
+
+    & &-content {
+      margin: 145px 95px;
+      text-align: left;
+      width: inherit;
+
+      h1 {
+        width: 540px;
+        padding: 0;
+      }
+
+      p {
+        width: 445px;
+        margin: 26px 0 0;
+      }
+
+      .btn {
+        margin-top: 40px;
+      }
     }
 
-    .award {
-      width: 1111px;
+    .phone-img {
+      width: 476px;
+      height: auto;
+      left: 632px;
+      top: 86px;
+    }
+
+    .circle-img {
+      top: 0;
+      left: 470px;
+      width: 640px;
       height: 640px;
+    }
+  }
 
-      & &-content {
-        margin: 145px 95px;
-        text-align: left;
-        width: inherit;
+  .projects {
+    outline: 2px solid brown;
+    flex-direction: row;
+    gap: $size-16;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
 
-        h1 {
-          width: 540px;
-          padding: 0;
-        }
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 541px;
+      margin-bottom: 0;
+    }
 
-        p {
-          width: 445px;
-          margin: 26px 0 0;
-        }
+    &-col1 {
+      height: 640px;
+    }
 
-        .btn {
-          margin-top: 40px;
-        }
+    &-col2 {
+      .projects-item {
+        height: 308px;
+        gap: $size-24;
       }
 
-      .phone-img {
-        width: 476px;
-        height: auto;
-        left: 632px;
-        top: 86px;
-      }
-
-      .circle-img {
-        top: 0;
-        left: 470px;
-        width: 640px;
-        height: 640px;
+      .projects-item:first-child {
+        margin-bottom: 24px;
       }
     }
 
-    .projects {
-      outline: 2px solid brown;
-      flex-direction: row;
-      gap: $size-16;
-      position: relative;
-      align-items: center;
-      justify-content: space-between;
+    .head-leaf-img {
+      position: absolute;
+      bottom: 490px;
+      left: -165px;
+      width: 1006px;
+      height: 594px;
+      z-index: -1;
+      // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    }
+  }
 
-      &-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 541px;
-        margin-bottom: 0;
+  .values {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    outline: 2px solid lime;
+
+    .value-item {
+      outline: 2px solid blueviolet;
+      text-align: center;
+      flex-direction: column;
+      width: 350px;
+      margin-top: 0;
+
+      p {
+        width: 350px;
       }
 
-      &-col1 {
-        height: 640px;
-      }
-
-      &-col2 {
-        .projects-item {
-          height: 308px;
-          gap: $size-24;
-        }
-
-        .projects-item:first-child {
-          margin-bottom: 24px;
-        }
-      }
-
-      .head-leaf-img {
-        position: absolute;
-        bottom: 490px;
-        left: -165px;
-        width: 1006px;
+      .foot-leaf-img {
+        display: block;
+        bottom: -415px;
+        right: -165px;
         height: 594px;
+        position: absolute;
+        width: 1006px;
+        // opacity: 50.23%;
+        transform: scaleX(-1) scaleY(-1);
         z-index: -1;
         // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
       }
     }
 
-    .values {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      outline: 2px solid lime;
-
-      .value-item {
-        outline: 2px solid blueviolet;
-        text-align: center;
-        flex-direction: column;
-        width: 350px;
-        margin-top: 0;
-
-        p {
-          width: 350px;
-        }
-
-        .foot-leaf-img {
-          display: block;
-          bottom: -415px;
-          right: -165px;
-          height: 594px;
-          position: absolute;
-          width: 1006px;
-          // opacity: 50.23%;
-          transform: scaleX(-1) scaleY(-1);
-          z-index: -1;
-          // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-        }
-      }
-
-      .img-bg {
-        width: 202px;
-      }
+    .img-bg {
+      width: 202px;
     }
   }
 }
