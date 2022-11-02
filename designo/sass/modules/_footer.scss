@@ -1,7 +1,7 @@
 .footer {
   background-color: $clr-primary-black;
   color: $clr-primary-white;
-  margin: 311px auto 0;
+  margin-inline: auto;
   position: relative;
   text-align: center;
   width: $mb-max-width;
@@ -9,6 +9,7 @@
 
   .talk {
     background-color: $clr-primary-color;
+    border-radius: $border-radius;
     overflow: hidden;
     padding-inline: 24px;
     position: absolute;
@@ -145,7 +146,6 @@
     }
 
     .navigation {
-      margin-top: 467px;
       padding-top: 166px;
       display: flex;
       justify-content: space-between;

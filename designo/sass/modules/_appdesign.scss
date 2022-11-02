@@ -5,7 +5,7 @@
   outline: 2px solid lime;
 }
 
-.webdesign {
+.appdesign {
   height: 320px;
   background-color: $clr-primary-color;
   color: $clr-primary-white;
@@ -35,15 +35,14 @@
   }
 }
 
-.webapps {
-  margin-top: 96px;
-  margin-inline: 24px;
+.applib {
+  margin: 96px 24px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  .webcard {
+  .appcard {
     background-color: $clr-secondary-accent;
     margin-top: 40px;
     text-align: center;
@@ -64,7 +63,7 @@
       border-radius: 15px 15px 0 0;
     }
 
-    .webdesc {
+    .appdesc {
       padding: 32px 40px;
       display: flex;
       flex-direction: column;
@@ -73,8 +72,8 @@
     }
   }
 
-  .webcard:first-child {
-    margin-top: 0;
+  .appcard:first-child {
+    margin: 0;
   }
 
   .head-leaf-img {
@@ -83,12 +82,12 @@
 }
 
 .projects {
+  margin: 96px 24px 288px;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: $clr-primary-white;
-  margin: 96px 24px 288px;
 
   &-item {
     border-radius: $border-radius;
@@ -117,7 +116,7 @@
   }
 
   &-web {
-    max-width: 100%;
+    width: 100%;
     background-image: url("../../assets/home/mobile/image-web-design.jpg");
   }
 
@@ -142,7 +141,7 @@
     padding-inline: $size-40;
   }
 
-  .webdesign {
+  .appdesign {
     height: 252px;
 
     h1 {
@@ -158,18 +157,18 @@
     }
   }
 
-  .webapps {
+  .applib {
     margin-top: 120px;
     margin-inline: 40px;
 
-    .webcard {
+    .appcard {
       display: flex;
       width: 689px;
       height: 310px;
       border-radius: 0 15px 15px 0;
       margin-top: 32px;
 
-      .webimg {
+      .appimg {
         width: 339px;
       }
 
@@ -177,23 +176,19 @@
         border-radius: 15px 0 0 15px;
       }
 
-      .webdesc {
+      .appdesc {
         margin: auto;
         text-align: center;
         width: 50%;
-      }
-
-      .head-leaf-img {
-        display: none;
       }
     }
   }
 
   .projects {
-    margin-bottom: 408px;
+    margin: 120px 40px 408px;
 
     &-graphic,
-    &-app {
+    &-web {
       width: 689px;
     }
   }
@@ -207,7 +202,7 @@
     padding-inline: 0;
   }
 
-  .webdesign {
+  .appdesign {
     margin-inline: 165px;
 
     .circle-img {
@@ -219,37 +214,37 @@
     }
   }
 
-  .webapps {
+  .applib {
     position: relative;
     flex-direction: row;
     flex-wrap: wrap;
     border-radius: 0 0 15px 15px;
     column-gap: 32px;
     row-gap: 30px;
-    margin: 160px 0 0;
+    margin-inline: 0;
 
-    .webcard {
+    .appcard {
       flex-direction: column;
       width: 350px;
       height: 100%;
       margin-top: 0;
 
-      .webimg {
+      .appimg {
         width: 350px;
       }
 
       img {
         border-radius: 15px 15px 0 0;
       }
-      .webdesc {
+      .appdesc {
         width: 100%;
         padding-inline: 32px;
       }
     }
 
     .head-leaf-img {
-      position: absolute;
       display: block;
+      position: absolute;
       top: -225px;
       left: 0;
       width: 1006px;
@@ -260,9 +255,9 @@
   }
 
   .projects {
+    margin: 160px 0 0;
     flex-direction: row;
     gap: 30px;
-    margin: 160px 0 0;
 
     &-item {
       height: 308px;

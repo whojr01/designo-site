@@ -212,11 +212,10 @@
     width: $dt-max-width;
     max-width: $dt-max-width;
     margin-block: 64px;
-    padding-inline: 164px;
     outline: 2px solid blue;
 
     .menu_container {
-      padding-inline: 0;
+      padding-inline: 165px;
     }
 
     // .menuHamburger,

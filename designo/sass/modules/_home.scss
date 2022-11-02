@@ -5,7 +5,8 @@ body {
 
 .container {
   margin-inline: auto;
-  max-width: $max-width;
+  width: $mb-max-width;
+  max-width: $mb-max-width;
   outline: 2px solid lime;
 }
 
@@ -15,9 +16,9 @@ body {
   height: 843px;
   overflow: hidden;
   position: relative;
+  margin-bottom: 120px;
 
   .award-content {
-    z-index: 5;
     h1 {
       padding: $size-80 $size-24 0;
     }
@@ -28,6 +29,8 @@ body {
     }
 
     .btn {
+      position: relative;
+      z-index: 5;
       margin-top: $size-24;
       padding: 17.17px 24.2875px;
     }
@@ -37,7 +40,7 @@ body {
     left: 0;
     position: absolute;
     top: 434px;
-    z-index: 3;
+    z-index: 2;
 
     img {
       scale: 1.35;
@@ -50,7 +53,7 @@ body {
     width: 480px;
     top: 190px;
     left: 80px;
-    z-index: 2;
+    z-index: 1;
   }
 }
 
@@ -60,8 +63,13 @@ body {
   flex-direction: column;
   justify-content: center;
   color: $clr-primary-white;
+  margin-bottom: 120px;
 
   &-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-radius: $border-radius;
     height: 250px;
     margin-bottom: $size-24;
@@ -94,20 +102,35 @@ body {
   &-graphic {
     background-image: url("../../assets/home/mobile/image-graphic-design.jpg");
   }
+
+  &-col2 &-item:nth-last-child(2) {
+    margin-bottom: 0;
+  }
 }
 
 .values {
-  .img-bg {
-    width: 202px;
-    height: 202px;
-    margin: 0 auto $size-48;
-    background-image: url("../../assets/shared/desktop/bg-pattern-small-circle.svg");
+  margin-bottom: 312px;
+  margin-inline: 24px;
+
+  &-item {
+    margin-bottom: 80px;
+
+    .img-bg {
+      width: 202px;
+      height: 202px;
+      margin: 0 auto $size-48;
+      background-image: url("../../assets/shared/desktop/bg-pattern-small-circle.svg");
+    }
+
+    h2 {
+      margin-bottom: $size-32;
+      text-transform: uppercase;
+      @include setFont(20px, 26px, 5px, $fw-medium);
+    }
   }
 
-  h2 {
-    margin-bottom: $size-32;
-    text-transform: uppercase;
-    @include setFont(20px, 26px, 5px, $fw-medium);
+  &-item:last-child {
+    margin-bottom: 0;
   }
 
   .foot-leaf-img {
@@ -125,12 +148,13 @@ body {
   }
 
   .container {
+    width: $tb-max-width;
     max-width: $tb-max-width;
   }
 
   .award {
-    width: 689px;
-    margin-inline: auto;
+    margin-inline: 40px;
+    border-radius: $border-radius;
 
     & &-content {
       h1 {
@@ -203,7 +227,10 @@ body {
   }
 
   .values {
-    .value-item {
+    margin-bottom: 351px;
+
+    &-item {
+      margin-bottom: 32px;
       display: flex;
       align-items: center;
       text-align: left;
@@ -227,12 +254,12 @@ body {
 
 @media only screen and (min-width: $dt-max-width) {
   .container {
+    width: $dt-max-width;
     max-width: $dt-max-width;
-    padding-inline: 165px;
   }
 
   .award {
-    width: 1111px;
+    margin-inline: 165px;
     height: 640px;
 
     & &-content {
@@ -277,6 +304,7 @@ body {
     position: relative;
     align-items: center;
     justify-content: space-between;
+    margin-inline: 165px;
 
     &-item {
       display: flex;
@@ -304,6 +332,7 @@ body {
 
     .head-leaf-img {
       position: absolute;
+      display: block;
       bottom: 490px;
       left: -165px;
       width: 1006px;
@@ -318,14 +347,17 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    margin-inline: 165px;
     outline: 2px solid lime;
 
-    .value-item {
+    .values-item {
       outline: 2px solid blueviolet;
       text-align: center;
       flex-direction: column;
       width: 350px;
       margin-top: 0;
+      margin-bottom: 0;
+      gap: 30px;
 
       p {
         width: 350px;
