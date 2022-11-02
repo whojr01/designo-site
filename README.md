@@ -233,6 +233,12 @@ I've run into a few cases where my code isn't as dry or efficient as it needs to
 
 I'm trying to keep the organization for this site as easy as possible but I'm leaning towards adding a html template engine to reduce the number of touches to fix a single component. Right now if there's a problem in the CSS for the menu/footer I touch it once and recompile. Unfortunately that's not true for the HTML. So if I pair the HTML with a SASS mixin/extend I could componetize a number of the cards and ensure consistency across pages.
 
+I've been thinking of how I can reduce the size of the CSS that is needed. I think I should separate the common components into a library that gets pulled down once and used by all pages or a majority.
+
+I'm learning how to control the page a lot better and fixed a number of issues with margins, padding, and image sizes. The pages use the same components and follow the same structure. This should allow for a greater level of optimization since I haven't taken advantage of the power of SASS to write extentions and mixins.
+
+One glaring issue that I can see is my naming convention sucks. If I rename my classes I can really make the code DRY and optimize the organization much better. It will also aid in writing mixins and extentions.
+
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
