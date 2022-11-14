@@ -2,6 +2,7 @@
   margin-inline: auto;
   width: $mb-max-width;
   max-width: $mb-max-width;
+  margin-block: 34px 288px;
   outline: 2px solid lime;
 }
 
@@ -82,7 +83,7 @@
 }
 
 .projects {
-  margin: 96px 24px 288px;
+  margin: 96px 24px 0;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -139,6 +140,7 @@
     max-width: $tb-max-width;
     margin-inline: auto;
     padding-inline: $size-40;
+    margin-block: 64px 408px;
   }
 
   .appdesign {
@@ -185,7 +187,7 @@
   }
 
   .projects {
-    margin: 120px 40px 408px;
+    margin: 120px 40px 0;
 
     &-graphic,
     &-web {
@@ -200,6 +202,7 @@
     max-width: $dt-max-width;
     margin-inline: auto;
     padding-inline: 0;
+    margin-bottom: 351px;
   }
 
   .appdesign {

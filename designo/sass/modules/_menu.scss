@@ -13,7 +13,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: $clr-primary-white;
-    margin: 35px $size-24;
+    margin-top: 35px;
     position: relative;
     z-index: 10;
   }
@@ -108,7 +108,7 @@
   #menuToogle:checked ~ #menuItems {
     height: 235px;
     width: 375px;
-    left: -24px;
+    left: 0;
     opacity: 1;
     top: 65px; /* Pull the screen back into view */
     transition: all 0.7s ease-in;
@@ -151,7 +151,7 @@
     .menu_container {
       padding-inline: 40px;
       justify-content: space-between;
-      margin: 64px auto;
+      margin: 64px auto 0;
     }
 
     .menuHamburger,
@@ -211,10 +211,10 @@
   @media only screen and (min-width: $dt-max-width) {
     width: $dt-max-width;
     max-width: $dt-max-width;
-    margin-block: 64px;
     outline: 2px solid blue;
 
     .menu_container {
+      margin-top: 64px;
       padding-inline: 165px;
     }
 

@@ -1,0 +1,247 @@
+.container {
+  margin-inline: auto;
+  width: $mb-max-width;
+  max-width: $mb-max-width;
+  margin-block: 34px 310px;
+  outline: 2px solid lime;
+}
+
+.locations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+
+  .loccard {
+    text-align: center;
+    margin-top: 40px;
+
+    .locimg {
+      width: 375px;
+      height: 320px;
+      position: relative;
+      z-index: 3;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
+    .locdesc {
+      position: relative;
+      overflow: hidden;
+      padding: 80px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $clr-secondary-accent;
+
+      & h2 {
+        color: $clr-primary-color;
+        //   text-transform: uppercase;
+        @include setFont(32px, 36px, 0, $fw-medium);
+      }
+
+      & p {
+        margin-top: $size-24;
+        @include setFont(15px, 25px);
+      }
+
+      & p::first-line {
+        font-weight: $fw-medium;
+      }
+
+      .three-circles {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 584px;
+        height: 584px;
+        z-index: 2;
+      }
+    }
+  }
+
+  .loccard:first-child {
+    margin-top: 0;
+  }
+
+  .circles-img {
+    position: absolute;
+    top: 165px;
+    right: 0;
+    width: 300px;
+    transform: rotate(90deg);
+    z-index: 2;
+    // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+  }
+}
+
+@media only screen and (min-width: $tb-max-width) {
+  .container {
+    width: $tb-max-width;
+    max-width: $tb-max-width;
+    margin-inline: auto;
+    padding-inline: $size-40;
+    margin-block: 64px 405px;
+    overflow: hidden;
+  }
+
+  .locations {
+    .loccard {
+      display: flex;
+      flex-direction: column;
+      border-radius: 0 0 15px 15px;
+      gap: 30px;
+      margin-block: 0 120px;
+
+      h1 {
+        @include setFont(48px, 48px, 0, $fw-medium);
+      }
+
+      h2 {
+        @include setFont(40px, 48px, 0, $fw-medium);
+      }
+
+      p {
+        @include setFont(16px, 26px, 0);
+      }
+
+      .locimg {
+        width: 689px;
+        height: 326px;
+
+        img {
+          border-radius: 15px;
+        }
+      }
+
+      .locdesc {
+        border-radius: 15px;
+        padding: 64px 58px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        height: 326px;
+
+        .loccontact {
+          display: flex;
+          justify-content: flex-start;
+          gap: 150px;
+          width: inherit;
+
+          p {
+            margin-top: 0;
+          }
+
+          p:first-child {
+            width: 170px;
+          }
+        }
+
+        .three-circles {
+          position: absolute;
+          top: -260px;
+          left: 0px;
+          width: 584px;
+          height: 584px;
+          // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+        }
+      }
+    }
+
+    .loccard:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: $dt-max-width) {
+  .container {
+    width: $dt-max-width;
+    max-width: $dt-max-width;
+    margin-inline: auto;
+    padding-inline: 165px;
+    position: relative;
+    margin-block: 64px 356px;
+  }
+
+  .locations {
+    flex-direction: column;
+    flex-wrap: wrap;
+    column-gap: 32px;
+    row-gap: 30px;
+    margin: 0;
+
+    .loccard {
+      z-index: 5;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      margin-top: 0;
+      gap: 30px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      .locimg {
+        width: 350px;
+        height: 326px;
+
+        img {
+          border-radius: 15px;
+        }
+      }
+
+      .locdesc {
+        width: 730px;
+        height: 326px;
+        padding-inline: 95px;
+
+        p {
+          margin-top: 24px;
+        }
+
+        .two-circles-left {
+          position: absolute;
+          display: block;
+          width: 220px;
+          bottom: 0px;
+          left: 140px;
+        }
+
+        .three-circles {
+          position: absolute;
+          bottom: 0;
+          left: 50px;
+          width: 584px;
+          height: 584px;
+          // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+        }
+      }
+      &-reverse {
+        flex-direction: row-reverse;
+
+        .aboutimg {
+          img {
+            border-radius: 0 15px 15px 0;
+          }
+
+          .three-circles {
+            transform: scale(-1);
+          }
+        }
+      }
+    }
+  }
+}

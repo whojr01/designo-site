@@ -2,6 +2,7 @@
   margin-inline: auto;
   width: $mb-max-width;
   max-width: $mb-max-width;
+  margin-block: 34px 288px;
   outline: 2px solid lime;
 }
 
@@ -88,7 +89,7 @@
   flex-direction: column;
   justify-content: center;
   color: $clr-primary-white;
-  margin: 96px 24px 288px;
+  margin: 96px 24px 0;
 
   &-item {
     border-radius: $border-radius;
@@ -140,6 +141,7 @@
     max-width: $tb-max-width;
     margin-inline: auto;
     padding-inline: $size-40;
+    margin-block: 64px 408px;
   }
 
   .webdesign {
@@ -190,8 +192,6 @@
   }
 
   .projects {
-    margin-bottom: 408px;
-
     &-graphic,
     &-app {
       width: 689px;
@@ -205,6 +205,7 @@
     max-width: $dt-max-width;
     margin-inline: auto;
     padding-inline: 0;
+    margin-bottom: 351px;
   }
 
   .webdesign {

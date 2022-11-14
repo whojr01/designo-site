@@ -46,6 +46,10 @@
     }
   }
 
+  .talk[data-talk="no"] {
+    display: none;
+  }
+
   .navigation {
     position: relative;
     padding-top: 253px;
@@ -207,7 +211,6 @@
   @media only screen and (min-width: $dt-max-width) {
     width: $dt-max-width;
     max-width: $dt-max-width;
-    margin: 357px auto 0;
 
     .sb-margin {
       margin-top: 0;

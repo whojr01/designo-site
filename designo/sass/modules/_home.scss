@@ -7,6 +7,7 @@ body {
   margin-inline: auto;
   width: $mb-max-width;
   max-width: $mb-max-width;
+  margin-block: 34px 312px;
   outline: 2px solid lime;
 }
 
@@ -109,7 +110,6 @@ body {
 }
 
 .values {
-  margin-bottom: 312px;
   margin-inline: 24px;
 
   &-item {
@@ -150,6 +150,7 @@ body {
   .container {
     width: $tb-max-width;
     max-width: $tb-max-width;
+    margin-block: $size-64 351px;
   }
 
   .award {
@@ -227,8 +228,6 @@ body {
   }
 
   .values {
-    margin-bottom: 351px;
-
     &-item {
       margin-bottom: 32px;
       display: flex;
@@ -256,6 +255,7 @@ body {
   .container {
     width: $dt-max-width;
     max-width: $dt-max-width;
+    margin-block: $size-64 447px;
   }
 
   .award {
