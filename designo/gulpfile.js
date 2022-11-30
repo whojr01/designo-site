@@ -1,10 +1,12 @@
 "use strict";
 
+const { src, dest, watch, parallel, series } = require("gulp");
 const { doesNotMatch } = require("assert");
 const gulp = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const addVersionString = require("gulp-rev-all");
+const replace = require("gulp-replace");
 const debug = require("gulp-debug");
 
 const versionConfig = {
@@ -15,6 +17,19 @@ const versionConfig = {
   },
   dontRenameFile: [/^\/favicon.ico$/g, ".html"],
 };
+
+let LOCDEV;
+let URLDEV;
+
+if ("NODE_ENV" in process.env && process.env.NODE_ENV.trim() === "production") {
+  LOCDEV = "https//localhost:2020";
+} else {
+  LOCDEV = ".";
+}
+
+function processURLs() {
+  return src("./*.html").pipe(replace("%HOME_PATH%", LOCDEV)).pipe(dest("build/"));
+}
 
 function buildStyles() {
   return gulp
@@ -33,7 +48,7 @@ function buildCSSDist() {
 }
 
 function buildHTMLDist() {
-  return gulp.src("./*.html").pipe(debug()).pipe(gulp.dest("./build/"));
+  return gulp.src("./*.html").pipe(debug()).pipe(replace("%HOME_PATH%", LOCDEV)).pipe(gulp.dest("./build/"));
 }
 
 function versionFiles() {
@@ -42,5 +57,6 @@ function versionFiles() {
 
 exports.buildStyles = gulp.series(buildStyles, buildHTMLDist, buildCSSDist, versionFiles);
 exports.watch = function () {
-  gulp.watch("./sass/**/*.scss", buildStyles);
+  gulp.watch("./sass/**/*.scss", series(buildStyles, buildHTMLDist, buildCSSDist));
+  gulp.watch("./*.html", buildHTMLDist);
 };

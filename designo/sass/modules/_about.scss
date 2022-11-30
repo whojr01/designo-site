@@ -1,5 +1,5 @@
 .container {
-  margin-inline: auto;
+  margin: 34px auto 310px;
   width: $mb-max-width;
   max-width: $mb-max-width;
   outline: 2px solid lime;
@@ -97,81 +97,11 @@
   }
 }
 
-.locations {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-block: 120px;
-
-  h2 {
-    margin-top: 48px;
-    text-transform: uppercase;
-    @include setFont(20px, 26px, 5px, $fw-medium);
-  }
-
-  .btn {
-    background-color: $clr-primary-color;
-    color: $clr-primary-white;
-    margin-block: 32px 48px;
-    padding: 17.17px 24.2875px;
-    line-height: normal;
-  }
-
-  .locimg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .can-rotate {
-      width: 202px;
-      height: 202px;
-      background-image: url("../../assets/about/desktop/bg-pattern-hero-about-desktop.svg");
-      background-size: contain;
-      transform: rotate(270deg);
-    }
-
-    .can-img-rotate {
-      transform: rotate(-270deg);
-    }
-
-    .aus-rotate {
-      width: 202px;
-      height: 202px;
-      background-image: url("../../assets/about/desktop/bg-pattern-hero-about-desktop.svg");
-      background-size: contain;
-      transform: rotate(-180deg);
-    }
-
-    .aus-img-rotate {
-      transform: rotate(180deg);
-    }
-
-    .king-rotate {
-      width: 202px;
-      height: 202px;
-      background-image: url("../../assets/about/desktop/bg-pattern-hero-about-desktop.svg");
-      background-size: contain;
-      transform: rotate(90deg);
-    }
-
-    .king-img-rotate {
-      transform: rotate(-90deg);
-    }
-  }
-}
-
-.real-deal {
-  margin-bottom: 310px;
-}
-
 @media only screen and (min-width: $tb-max-width) {
   .container {
     width: $tb-max-width;
     max-width: $tb-max-width;
-    margin-inline: auto;
+    margin: 71px auto 408px;
     padding-inline: $size-40;
     overflow: hidden;
 
@@ -235,27 +165,13 @@
       margin-bottom: 0;
     }
   }
-
-  .locations {
-    h2 {
-      @include setFont(20px, 26px, 5px, $fw-medium);
-    }
-  }
-
-  .locations .locimg:last-child .btn:last-child {
-    margin-bottom: 0;
-  }
-
-  .real-deal {
-    margin-bottom: 406px;
-  }
 }
 
 @media only screen and (min-width: $dt-max-width) {
   .container {
     width: $dt-max-width;
     max-width: $dt-max-width;
-    margin-inline: auto;
+    margin: 64px auto 352px;
     padding-inline: 165px;
     position: relative;
 
@@ -294,7 +210,6 @@
     flex-wrap: wrap;
     column-gap: 32px;
     row-gap: 30px;
-    margin: 160px 0 0;
 
     .aboutcard {
       z-index: 5;
@@ -351,22 +266,6 @@
         .three-circles {
           transform: scale(-1);
         }
-      }
-    }
-  }
-
-  .locations {
-    flex-direction: row;
-    justify-content: space-around;
-    position: relative;
-    z-index: 5;
-
-    .locimg {
-      margin: 0;
-      padding: 0;
-
-      .btn {
-        margin-bottom: 0;
       }
     }
   }

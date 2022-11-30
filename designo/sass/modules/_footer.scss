@@ -57,7 +57,6 @@
     ul {
       list-style: none;
       padding-top: $size-65;
-      text-decoration: none;
       @include setFont(14px, 14px, 2px);
     }
 
@@ -76,10 +75,19 @@
       text-decoration-line: underline;
     }
 
+    a {
+      text-decoration: none;
+      color: $clr-primary-white;
+    }
+
     img {
       height: 27px;
       width: 202px;
       margin-inline: auto;
+    }
+
+    .logo {
+      width: 404px;
     }
 
     hr {

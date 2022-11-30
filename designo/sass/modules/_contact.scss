@@ -77,80 +77,6 @@
   }
 }
 
-.locations {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-block: 120px 0;
-
-  h2 {
-    margin-top: 48px;
-    text-transform: uppercase;
-    @include setFont(20px, 26px, 5px, $fw-medium);
-  }
-
-  .btn {
-    background-color: $clr-primary-color;
-    color: $clr-primary-white;
-    margin-block: 32px 48px;
-    padding: 17.17px 24.2875px;
-    line-height: normal;
-  }
-
-  .locimg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .can-rotate {
-      width: 202px;
-      height: 202px;
-      background-image: url("../../assets/about/desktop/bg-pattern-hero-about-desktop.svg");
-      background-size: contain;
-      transform: rotate(270deg);
-    }
-
-    .can-img-rotate {
-      transform: rotate(-270deg);
-    }
-
-    .aus-rotate {
-      width: 202px;
-      height: 202px;
-      background-image: url("../../assets/about/desktop/bg-pattern-hero-about-desktop.svg");
-      background-size: contain;
-      transform: rotate(-180deg);
-    }
-
-    .aus-img-rotate {
-      transform: rotate(180deg);
-    }
-
-    .king-rotate {
-      width: 202px;
-      height: 202px;
-      background-image: url("../../assets/about/desktop/bg-pattern-hero-about-desktop.svg");
-      background-size: contain;
-      transform: rotate(90deg);
-    }
-
-    .king-img-rotate {
-      transform: rotate(-90deg);
-    }
-  }
-
-  .locimg:last-child a {
-    margin-bottom: 0;
-  }
-
-  .head-leaf-img {
-    display: none;
-  }
-}
-
 @media only screen and (min-width: $tb-max-width) {
   .container {
     width: $tb-max-width;
@@ -225,24 +151,6 @@
       position: absolute;
       top: 0;
       left: 0;
-    }
-  }
-
-  .locations {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    position: relative;
-
-    .head-leaf-img {
-      position: absolute;
-      display: block;
-      bottom: -268px;
-      left: 280px;
-      width: 1006px;
-      height: 594px;
-      z-index: -1;
-      // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
     }
   }
 }

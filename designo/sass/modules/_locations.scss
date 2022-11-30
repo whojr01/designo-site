@@ -2,11 +2,11 @@
   margin-inline: auto;
   width: $mb-max-width;
   max-width: $mb-max-width;
-  margin-block: 34px 310px;
   outline: 2px solid lime;
+  margin-block: 34px 310px;
 }
 
-.locations {
+.officeloc {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,7 +91,7 @@
     overflow: hidden;
   }
 
-  .locations {
+  .officeloc {
     .loccard {
       display: flex;
       flex-direction: column;
@@ -173,7 +173,7 @@
     margin-block: 64px 356px;
   }
 
-  .locations {
+  .officeloc {
     flex-direction: column;
     flex-wrap: wrap;
     column-gap: 32px;

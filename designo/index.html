@@ -12,22 +12,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%HOME_PATH%/assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="%HOME_PATH%/css/style.css" />
+    <link rel="stylesheet" href="%HOME_PATH%/css/common.css" />
   </head>
   <body>
     <header>
       <div class="menu">
         <nav class="menu_container">
-          <img src="./assets/shared/desktop/logo-dark.png" alt="" />
+          <div class="logo">
+            <a href="%HOME_PATH%/index.html"><img src="%HOME_PATH%/assets/shared/desktop/logo-dark.png" alt="" /></a>
+          </div>
           <label for="menuToogle">
             <input type="checkbox" id="menuToogle" />
             <div class="menuHamburger"></div>
             <div id="menuItems">
               <ul>
-                <li><a href="#">Our Company</a></li>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">Contract</a></li>
+                <li><a href="%HOME_PATH%/about.html">Our Company</a></li>
+                <li><a href="%HOME_PATH%/locations.html">Locations</a></li>
+                <li><a href="%HOME_PATH%/contact.html">Contact</a></li>
               </ul>
             </div>
           </label>
@@ -42,52 +45,59 @@
             With over 10 years in the industry, we are experienced in creating fully responsive websites, app design, and engaging brand experiences.
             Find out more about our services.
           </p>
-          <a class="btn bg-primary-white" href="#">Learn more</a>
+          <a class="btn bg-primary-white" href="%HOME_PATH%/about.html">Learn more</a>
         </div>
         <div class="phone-img">
-          <img src="./assets/home/desktop/image-hero-phone.png" alt="Picture of mobile phone with design pattern and the word frame." />
+          <img src="%HOME_PATH%/assets/home/desktop/image-hero-phone.png" alt="Picture of mobile phone with design pattern and the word frame." />
         </div>
         <div class="circle-img">
-          <img src="./assets/home/desktop/bg-pattern-hero-home.svg" alt="" />
+          <img src="%HOME_PATH%/assets/home/desktop/bg-pattern-hero-home.svg" alt="" />
         </div>
       </section>
       <section class="projects">
-        <div class="projects-item projects-col1 projects-web">
-          <h2>Web Design</h2>
-          <div class="flex-item flex-center">
-            <p>View Projects</p>
-            <div>
-              <img src="./assets/shared/desktop/icon-right-arrow.svg" alt="" />
+        <a href="%HOME_PATH%/web-design.html" class="prolnk">
+          <div class="projects-item projects-col1 projects-web" data-dt-expand="index">
+            <h2>Web Design</h2>
+            <div class="flex-item flex-center">
+              <p>View Projects</p>
+              <div>
+                <img src="%HOME_PATH%/assets/shared/desktop/icon-right-arrow.svg" alt="" />
+              </div>
             </div>
           </div>
-        </div>
+        </a>
         <div class="projects-col2">
-          <div class="projects-item projects-app">
-            <h2>App Design</h2>
-            <div class="flex-item flex-center">
-              <p>View Projects</p>
-              <div>
-                <img src="./assets/shared/desktop/icon-right-arrow.svg" alt="" />
+          <a href="%HOME_PATH%/app-design.html" class="prolnk">
+            <div class="projects-item projects-app">
+              <h2>App Design</h2>
+              <div class="flex-item flex-center">
+                <p>View Projects</p>
+                <div>
+                  <img src="%HOME_PATH%/assets/shared/desktop/icon-right-arrow.svg" alt="" />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="projects-item projects-graphic">
-            <h2>Graphic Design</h2>
-            <div class="flex-item flex-center">
-              <p>View Projects</p>
-              <div>
-                <img src="./assets/shared/desktop/icon-right-arrow.svg" alt="" />
+          </a>
+          <a href="%HOME_PATH%/graphic-design.html" class="prolnk">
+            <div class="projects-item projects-graphic">
+              <h2>Graphic Design</h2>
+              <div class="flex-item flex-center">
+                <p>View Projects</p>
+                <div>
+                  <img src="%HOME_PATH%/assets/shared/desktop/icon-right-arrow.svg" alt="" />
+                </div>
               </div>
             </div>
-          </div>
+          </a>
           <div class="head-leaf-img">
-            <img src="./assets/shared/desktop/bg-pattern-leaf.svg" alt="" />
+            <img src="%HOME_PATH%/assets/shared/desktop/bg-pattern-leaf.svg" alt="" />
           </div>
         </div>
       </section>
+
       <section class="values text-center">
         <div class="values-item">
-          <div class="img-bg"><img src="./assets/home/desktop/illustration-passionate.svg" alt="" /></div>
+          <div class="img-bg"><img src="%HOME_PATH%/assets/home/desktop/illustration-passionate.svg" alt="" /></div>
           <div>
             <h2>Passionate</h2>
             <p>
@@ -97,7 +107,7 @@
           </div>
         </div>
         <div class="values-item">
-          <div class="img-bg"><img src="./assets/home/desktop/illustration-resourceful.svg" alt="" /></div>
+          <div class="img-bg"><img src="%HOME_PATH%/assets/home/desktop/illustration-resourceful.svg" alt="" /></div>
           <div>
             <h2>Resourceful</h2>
             <p>
@@ -107,7 +117,7 @@
           </div>
         </div>
         <div class="values-item">
-          <div class="img-bg"><img src="./assets/home/desktop/illustration-friendly.svg" alt="" /></div>
+          <div class="img-bg"><img src="%HOME_PATH%/assets/home/desktop/illustration-friendly.svg" alt="" /></div>
           <div>
             <h2>Friendly</h2>
             <p>
@@ -116,7 +126,7 @@
             </p>
           </div>
           <div class="foot-leaf-img">
-            <img src="./assets/shared/desktop/bg-pattern-leaf.svg" alt="" />
+            <img src="%HOME_PATH%/assets/shared/desktop/bg-pattern-leaf.svg" alt="" />
           </div>
         </div>
       </section>
@@ -127,20 +137,24 @@
           <h2>Let's talk about your project</h2>
           <p>Ready to take it to the next level? Contact us today and find out how our expertise can help your business grow.</p>
         </div>
-        <a class="btn bg-primary-white" href="#">Get in touch</a>
+        <a class="btn bg-primary-white" href="%HOME_PATH%/contact.html">Get in touch</a>
         <div class="circles-img">
-          <img src="./assets/shared/desktop/bg-pattern-call-to-action.svg" alt="" />
+          <img src="%HOME_PATH%/assets/shared/desktop/bg-pattern-call-to-action.svg" alt="" />
         </div>
       </div>
       <div class="navigation">
         <hr />
         <nav>
           <div class="menu">
-            <img src="./assets/shared/desktop/logo-light.png" width="404" height="54" alt="" />
+            <div class="logo">
+              <a href="%HOME_PATH%/index.html">
+                <img src="%HOME_PATH%/assets/shared/desktop/logo-light.png" width="404" height="54" alt="" />
+              </a>
+            </div>
             <ul class="work">
-              <li>Our company</li>
-              <li>Locations</li>
-              <li>Contact</li>
+              <li><a href="%HOME_PATH%/about.html">Our Company</a></li>
+              <li><a href="%HOME_PATH%/locations.html">Locations</a></li>
+              <li><a href="%HOME_PATH%/contact.html">Contact</a></li>
             </ul>
           </div>
         </nav>
@@ -157,11 +171,11 @@
           <p>M : contact@designo.co</p>
         </div>
         <div class="social">
-          <img src="./assets/shared/desktop/icon-facebook.svg" style="width: 24px; height: 24px" alt="" />
-          <img src="./assets/shared/desktop/icon-youtube.svg" style="width: 24px; height: 24px" alt="" />
-          <img src="./assets/shared/desktop/icon-twitter.svg" style="width: 24px; height: 24px" alt="" />
-          <img src="./assets/shared/desktop/icon-pinterest.svg" style="width: 24px; height: 24px" alt="" />
-          <img src="./assets/shared/desktop/icon-instagram.svg" style="width: 24px; height: 24px" alt="" />
+          <img src="%HOME_PATH%/assets/shared/desktop/icon-facebook.svg" style="width: 24px; height: 24px" alt="" />
+          <img src="%HOME_PATH%/assets/shared/desktop/icon-youtube.svg" style="width: 24px; height: 24px" alt="" />
+          <img src="%HOME_PATH%/assets/shared/desktop/icon-twitter.svg" style="width: 24px; height: 24px" alt="" />
+          <img src="%HOME_PATH%/assets/shared/desktop/icon-pinterest.svg" style="width: 24px; height: 24px" alt="" />
+          <img src="%HOME_PATH%/assets/shared/desktop/icon-instagram.svg" style="width: 24px; height: 24px" alt="" />
         </div>
       </div>
     </footer>

@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  padding-inline: 24px;
 
   h1 {
     @include setFont(32px, 36px, 0, $fw-medium);
@@ -23,7 +24,6 @@
 
   p {
     margin-top: $size-24;
-    width: 327px;
     @include setFont(15px, 25px);
   }
 
@@ -83,66 +83,12 @@
   }
 }
 
-.projects {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: $clr-primary-white;
-  margin: 96px 24px 0;
-
-  &-item {
-    border-radius: $border-radius;
-    height: 250px;
-    margin-bottom: $size-24;
-    // width: 327px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    h2 {
-      margin-bottom: 11.97px;
-      text-transform: uppercase;
-    }
-
-    p {
-      //   margin-right: $size-16;
-      text-transform: uppercase;
-      @include setFont(15px, 21.68px, 5px, $fw-medium);
-    }
-  }
-
-  &-item:last-child {
-    margin-bottom: 0;
-  }
-
-  &-web {
-    width: 100%;
-    background-image: url("../../assets/home/mobile/image-web-design.jpg");
-    background-size: cover;
-  }
-
-  &-app {
-    width: 100%;
-    background-image: url("../../assets/home/mobile/image-app-design.jpg");
-    background-size: cover;
-  }
-
-  &-graphic {
-    width: 100%;
-    background-image: url("../../assets/home/mobile/image-graphic-design.jpg");
-    background-size: cover;
-  }
-}
-
 @media only screen and (min-width: $tb-max-width) {
   .container {
     width: $tb-max-width;
     max-width: $tb-max-width;
-    margin-inline: auto;
     padding-inline: $size-40;
-    margin-block: 71px 408px;
+    margin: 71px auto 408px;
   }
 
   .graphic {
@@ -191,22 +137,14 @@
       }
     }
   }
-
-  .projects {
-    &-web,
-    &-app {
-      width: 689px;
-    }
-  }
 }
 
 @media only screen and (min-width: $dt-max-width) {
   .container {
     width: $dt-max-width;
     max-width: $dt-max-width;
-    margin-inline: auto;
+    margin: 64px auto 352px;
     padding-inline: 0;
-    margin-block: 64px 352px;
   }
 
   .graphic {
@@ -258,18 +196,6 @@
       height: 594px;
       z-index: -1;
       //   filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-    }
-  }
-
-  .projects {
-    flex-direction: row;
-    gap: 30px;
-    margin: 160px 0 0;
-
-    &-item {
-      height: 308px;
-      width: 541px;
-      margin-bottom: 0;
     }
   }
 }
