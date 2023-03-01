@@ -21,10 +21,6 @@
     align-items: center;
     margin-inline: 24px;
 
-    h2 {
-      @include setFont(32px, 36px, 0, $fw-medium);
-    }
-
     p {
       margin-top: 24px;
       @include setFont(15px, 25px);
@@ -32,6 +28,8 @@
   }
 
   #form {
+    position: relative;
+    z-index: 2;
     margin-top: 48px;
     display: flex;
     flex-direction: column;
@@ -42,38 +40,112 @@
     input {
       width: 100%;
       background-color: $clr-primary-color;
+      background-color: transparent;
       color: $clr-primary-white;
       border: 0;
       outline: 0;
-      border-bottom: 2px solid $clr-primary-white;
+      border-bottom: 1px solid $clr-primary-white;
+      padding-left: 16px;
+      margin-bottom: 25px;
       resize: none;
-      margin-top: 32px;
       opacity: 0.5;
-      line-height: 48px;
+    }
+
+    & .formfocus {
+      border-bottom: 3px solid $clr-primary-white;
     }
 
     textarea::placeholder,
     input::placeholder {
       color: $clr-primary-white;
-      padding-left: 16px;
+      font-weight: 400;
     }
 
-    #name {
-      margin-top: 0;
+    textarea:focus,
+    input:focus::-webkit-input-placeholder {
+      font-weight: bold;
+      // border-bottom: 3px solid $clr-primary-white;
+    }
+
+    textarea:focus::placeholder,
+    input:focus::placeholder {
+      font-weight: 500;
+      color: $clr-primary-white;
+      color: #ffffff;
+    }
+
+    // #name {
+    //   margin-top: 0;
+    // }
+
+    .button-position {
+      text-align: center;
+      margin: 0;
     }
 
     .btn {
       background-color: $clr-primary-white;
       color: $clr-primary-black;
       border: none;
-      margin-inline: auto;
       margin-top: 40px;
       padding: 17.17px 24.2875px;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      color: $clr-primary-white;
+      background: $clr-secondary-color;
+      outline: none;
+      cursor: pointer;
     }
   }
 
   .circles-img {
     display: none;
+  }
+
+  .mobile-circles-img {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -100px;
+    width: 876px;
+    height: 990px;
+    // filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(80%) contrast(119%);
+  }
+
+  #emailfield {
+    position: relative;
+  }
+
+  .error {
+    position: absolute;
+    left: 0;
+    width: 90%;
+    padding: 0;
+    z-index: -1;
+  }
+
+  .errmessage {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    gap: 0.5em;
+  }
+
+  .errexclaim {
+    background-image: url("../../assets/contact/desktop/icon-error.svg");
+    background-repeat: no-repeat;
+    margin-top: 0.3em;
+    height: 20px;
+    width: 20px;
+  }
+
+  .error-dah {
+    background: lime;
   }
 }
 
@@ -87,25 +159,43 @@
   }
 
   .contactus {
-    padding-inline: 58px;
+    padding: 55px 58px;
 
     .content {
       justify-content: flex-start;
       align-items: flex-start;
       text-align: left;
-    }
 
-    textarea::placeholder,
-    input::placeholder {
-      padding-left: 24px;
+      h1 {
+        @include setFont(48px, 48px, 0, $fw-medium);
+      }
     }
 
     .circles-img {
       display: block;
       position: absolute;
-      top: 0;
-      left: -75px;
-      transform: rotate(90deg);
+      z-index: 1;
+      bottom: 170px;
+      left: -130px;
+      // transform: rotate(90deg);
+    }
+
+    .mobile-circles-img {
+      display: none;
+    }
+
+    #form {
+      .btn {
+        margin-top: 24px;
+      }
+
+      .button-position {
+        text-align: right;
+      }
+
+      .error {
+        width: 92%;
+      }
     }
   }
 }
@@ -121,6 +211,7 @@
 
   .contactus {
     padding-inline: 0;
+    height: 480px;
 
     .twocol {
       display: flex;
@@ -138,19 +229,32 @@
       width: 380px;
       margin-top: 0;
       padding-inline: 0;
+      // outline: 1px solid lime;
 
       .btn {
         margin-inline: 0;
         align-self: flex-end;
         padding: 17.17px 47.1px;
       }
+
+      .error {
+        width: 95%;
+      }
     }
 
     .circles-img {
       display: block;
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
+    }
+  }
+
+  .footer {
+    .navigation {
+      hr {
+        top: 230px;
+      }
     }
   }
 }

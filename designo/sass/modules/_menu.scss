@@ -1,7 +1,3 @@
-// $clr-primary-white
-// $max-width
-//
-
 .menu {
   color: $clr-primary-white;
   width: $mb-max-width;
@@ -23,15 +19,73 @@
     height: 27px;
   }
 
-  #menuToogle {
-    opacity: 0;
-    align-items: center;
+  .primary-navigation {
+    position: absolute;
+    top: 60px;
+    right: 0%;
+    width: 100%;
+    background: $clr-primary-black;
+    margin: 0;
+    padding-block: $size-48;
+    list-style: none;
+    transition: clip-path ease-in-out 700ms;
+  }
+
+  .primary-navigation[data-state="opened"] {
+    animation: clipPathCircleOpen 750ms ease-in-out forwards;
+    display: block;
+  }
+
+  .primary-navigation[data-state="closing"] {
+    animation: clipPathCircleClose 750ms ease-in-out forwards;
+  }
+
+  .primary-navigation[data-state="closed"] {
+    display: none;
+  }
+
+  @keyframes clipPathCircleOpen {
+    0% {
+      clip-path: circle(0% at top right);
+    }
+    100% {
+      clip-path: circle(250% at top right);
+    }
+  }
+  @keyframes clipPathCircleClose {
+    0% {
+      clip-path: circle(250% at top right);
+    }
+    100% {
+      clip-path: circle(0% at top right);
+    }
+  }
+
+  .menu_container li {
+    padding: 0 $size-24 $size-32;
+  }
+
+  .menu_container a {
+    display: block;
+    color: $clr-primary-white;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include setFont($fs-mb-menu, $lh-mb-menu, $ls-mb-menu);
+  }
+
+  .menuToggle {
+    padding: 0.9em;
+    background: transparent;
+    border: 0;
+    // outline: 2px solid lime;
+    position: relative;
+    right: 0;
     cursor: pointer;
-    display: flex;
-    height: 30px;
-    justify-content: center;
-    width: 30px;
-    transition: menuItems 500s ease-in-out;
+  }
+
+  .menu_container li:hover,
+  .menu_container li:focus {
+    text-decoration: underline;
   }
 
   .menuHamburger {
@@ -39,11 +93,10 @@
     border-radius: 3px;
     height: 4px;
     position: absolute;
-    top: 11px;
+    top: 12px;
     right: 0;
     transition: all 0.5s ease;
     width: 29px;
-    z-index: 10;
     cursor: pointer;
   }
 
@@ -56,6 +109,7 @@
     position: absolute;
     transition: all 0.5s ease;
     width: 29px;
+    right: 0;
   }
 
   .menuHamburger::before {
@@ -66,190 +120,306 @@
     transform: translateY(6px);
   }
 
-  #menuItems {
-    background-color: $clr-primary-black;
-    color: $clr-primary-white;
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: -1000px; /* Push the menu items out of view */
-    transition: all 0.7s ease-out;
-    width: 100%;
-    z-index: 10;
-    @include setFont($fs-mb-menu, $lh-mb-menu, $ls-mb-menu);
-  }
-
-  #menuItems ul {
-    list-style-type: none;
-    padding-block: $size-48;
-  }
-
-  #menuItems li {
-    padding: 0 $size-24 $size-32;
-    text-transform: uppercase;
-  }
-
-  #menuItems li:last-child {
-    padding: 0 $size-24;
-  }
-
-  #menuItems li:focus,
-  #menuItems li:hover {
-    letter-spacing: 2px;
-    text-decoration-line: underline;
-  }
-
-  #menuItems a {
-    color: $clr-primary-white;
-    text-decoration: none;
-  }
-
-  #menuToogle:checked ~ #menuItems {
-    height: 235px;
-    width: 375px;
-    left: 0;
-    opacity: 1;
-    top: 65px; /* Pull the screen back into view */
-    transition: all 0.7s ease-in;
-    z-index: 10;
-  }
-
-  #menuToogle:checked ~ .menuHamburger::before {
+  .menuToggle[aria-expanded="true"] .menuHamburger::before {
     transform: rotate(45deg) translate(35px, -35px);
   }
 
-  #menuToogle:checked ~ .menuHamburger::after {
+  .menuToggle[aria-expanded="true"] .menuHamburger::after {
     transform: rotate(-45deg) translate(35px, 35px);
   }
 
-  #menuToogle:checked ~ .menuHamburger {
+  .menuToggle[aria-expanded="true"] .menuHamburger {
     background: transparent;
     transform: translateX(-50px);
   }
 
-  #menuToogle input {
-    display: none;
-  }
-
-  .menuOval {
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
     position: absolute;
-    width: 640px;
-    height: 640px;
-    left: 0;
-    top: 90px;
-    background: linear-gradient(90deg, rgba(93, 2, 2, 0.0001) 0%, rgba(93, 2, 2, 0.497569) 100%);
-    mix-blend-mode: normal;
-    opacity: 0.31;
-    transform: matrix(0, -1, -1, 0, 0, 0);
+    white-space: nowrap;
+    width: 1px;
   }
+}
 
-  @media only screen and (min-width: $tb-max-width) {
+@media only screen and (min-width: $tb-max-width) {
+  .menu {
     width: $tb-max-width;
     max-width: $tb-max-width;
-
-    .menu_container {
-      padding-inline: 40px;
-      justify-content: space-between;
-      margin: 64px auto 0;
-    }
-
-    .menuHamburger,
-    .menuHamburger::after,
-    .menuHamburger::before {
-      position: absolute;
-      top: -99999px;
-      left: -99999px;
-    }
-
-    #menuToogle,
-    #menuToogle input,
-    #menuToogle:checked ~ #menuItems {
-      // display: none;
-      pointer-events: none;
-      position: absolute;
-      // top: -99999px;
-      // left: -9999px;
-    }
-
-    #menuItems {
-      display: block;
-      background-color: $clr-primary-white;
-      position: static;
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    // label,
-    #menuItems ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-      gap: $size-42;
-      @include setFont($fs-dt-menu, $lh-dt-menu, $ls-dt-menu);
-    }
-
-    #menuItems li {
-      padding: 0;
-      margin: 0;
-    }
-
-    #menuItems li:last-child {
-      padding: 0;
-    }
-
-    #menuItems a {
-      color: $clr-secondary-black;
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  @media only screen and (min-width: $dt-max-width) {
-    width: $dt-max-width;
-    max-width: $dt-max-width;
-    outline: 2px solid blue;
-
-    .menu_container {
-      margin-top: 64px;
-      padding-inline: 165px;
-    }
-
-    // .menuHamburger,
-    // .menuHamburger::after,
-    // .menuHamburger::before {
-    //   position: absolute;
-    //   top: -99999px;
-    //   left: -99999px;
-    //   // display: none;
-    // }
-
-    label {
+    .menuToggle {
       display: none;
-      pointer-events: none;
     }
 
-    #menuItems {
-      display: block;
-      background-color: $clr-primary-white;
-      position: static;
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    label,
-    #menuItems ul {
+    .primary-navigation[data-state="closed"],
+    .primary-navigation[data-state="closing"],
+    .primary-navigation[data-state="opened"] {
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      gap: 16px;
+    }
+
+    .primary-navigation {
+      background: transparent;
+      position: static;
+    }
+
+    .primary-navigation li {
       padding: 0;
-      margin: 0;
-      gap: $size-42;
-      @include setFont($fs-dt-menu, $lh-dt-menu, $ls-dt-menu);
+    }
+    .primary-navigation li a {
+      color: $clr-primary-black;
     }
   }
 }
+
+@media only screen and (min-width: $dt-max-width) {
+  .menu {
+    width: $dt-max-width;
+    max-width: $dt-max-width;
+  }
+}
+
+// $clr-primary-white
+// $max-width
+//
+
+// .menu {
+//   color: $clr-primary-white;
+//   width: $mb-max-width;
+//   max-width: $mb-max-width;
+//   margin-inline: auto;
+
+//   .menu_container {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     background-color: $clr-primary-white;
+//     margin-top: 35px;
+//     position: relative;
+//     z-index: 10;
+//   }
+
+//   img {
+//     width: 202px;
+//     height: 27px;
+//   }
+
+//   #menuToogle {
+//     opacity: 0;
+//     align-items: center;
+//     cursor: pointer;
+//     display: flex;
+//     height: 30px;
+//     justify-content: center;
+//     width: 30px;
+//     transition: menuItems 500s ease-in-out;
+//   }
+
+//   .menuHamburger {
+//     background-color: $clr-primary-black;
+//     border-radius: 3px;
+//     height: 4px;
+//     position: absolute;
+//     top: 11px;
+//     right: 0;
+//     transition: all 0.5s ease;
+//     width: 29px;
+//     z-index: 10;
+//     cursor: pointer;
+//   }
+
+//   .menuHamburger::before,
+//   .menuHamburger::after {
+//     background: $clr-primary-black;
+//     border-radius: 3px;
+//     content: "";
+//     height: 4px;
+//     position: absolute;
+//     transition: all 0.5s ease;
+//     width: 29px;
+//   }
+
+//   .menuHamburger::before {
+//     transform: translateY(-6px);
+//   }
+
+//   .menuHamburger::after {
+//     transform: translateY(6px);
+//   }
+
+//   #menuItems {
+//     background-color: $clr-primary-black;
+//     color: $clr-primary-white;
+//     height: 100%;
+//     left: 0;
+//     opacity: 0;
+//     position: absolute;
+//     top: -1000px; /* Push the menu items out of view */
+//     transition: all 0.7s ease-out;
+//     width: 100%;
+//     z-index: 10;
+//     @include setFont($fs-mb-menu, $lh-mb-menu, $ls-mb-menu);
+//   }
+
+//   #menuItems ul {
+//     list-style-type: none;
+//     padding-block: $size-48;
+//   }
+
+//   #menuItems li {
+//     padding: 0 $size-24 $size-32;
+//     text-transform: uppercase;
+//   }
+
+//   #menuItems li:last-child {
+//     padding: 0 $size-24;
+//   }
+
+//   #menuItems li:focus,
+//   #menuItems li:hover {
+//     letter-spacing: 2px;
+//     text-decoration-line: underline;
+//   }
+
+//   #menuItems a {
+//     color: $clr-primary-white;
+//     text-decoration: none;
+//   }
+
+//   #menuToogle:checked ~ #menuItems {
+//     height: 235px;
+//     width: 375px;
+//     left: 0;
+//     opacity: 1;
+//     top: 65px; /* Pull the screen back into view */
+//     transition: all 0.7s ease-in;
+//     z-index: 10;
+//   }
+
+//   #menuToogle:checked ~ .menuHamburger::before {
+//     transform: rotate(45deg) translate(35px, -35px);
+//   }
+
+//   #menuToogle:checked ~ .menuHamburger::after {
+//     transform: rotate(-45deg) translate(35px, 35px);
+//   }
+
+//   #menuToogle:checked ~ .menuHamburger {
+//     background: transparent;
+//     transform: translateX(-50px);
+//   }
+
+//   #menuToogle input {
+//     display: none;
+//   }
+
+//   @media only screen and (min-width: $tb-max-width) {
+//     width: $tb-max-width;
+//     max-width: $tb-max-width;
+
+//     .menu_container {
+//       padding-inline: 40px;
+//       justify-content: space-between;
+//       margin: 64px auto 0;
+//     }
+
+//     .menuHamburger,
+//     .menuHamburger::after,
+//     .menuHamburger::before {
+//       position: absolute;
+//       top: -99999px;
+//       left: -99999px;
+//     }
+
+//     #menuToogle,
+//     #menuToogle input,
+//     #menuToogle:checked ~ #menuItems {
+//       // display: none;
+//       pointer-events: none;
+//       position: absolute;
+//       // top: -99999px;
+//       // left: -9999px;
+//     }
+
+//     #menuItems {
+//       display: block;
+//       background-color: $clr-primary-white;
+//       position: static;
+//       opacity: 1;
+//       pointer-events: all;
+//     }
+
+//     // label,
+//     #menuItems ul {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: center;
+//       align-items: center;
+//       padding: 0;
+//       margin: 0;
+//       gap: $size-42;
+//       @include setFont($fs-dt-menu, $lh-dt-menu, $ls-dt-menu);
+//     }
+
+//     #menuItems li {
+//       padding: 0;
+//       margin: 0;
+//     }
+
+//     #menuItems li:last-child {
+//       padding: 0;
+//     }
+
+//     #menuItems a {
+//       color: $clr-secondary-black;
+//       margin: 0;
+//       padding: 0;
+//     }
+//   }
+
+//   @media only screen and (min-width: $dt-max-width) {
+//     width: $dt-max-width;
+//     max-width: $dt-max-width;
+//     outline: 2px solid blue;
+
+//     .menu_container {
+//       margin-top: 64px;
+//       padding-inline: 165px;
+//     }
+
+//     // .menuHamburger,
+//     // .menuHamburger::after,
+//     // .menuHamburger::before {
+//     //   position: absolute;
+//     //   top: -99999px;
+//     //   left: -99999px;
+//     //   // display: none;
+//     // }
+
+//     label {
+//       display: none;
+//       pointer-events: none;
+//     }
+
+//     #menuItems {
+//       display: block;
+//       background-color: $clr-primary-white;
+//       position: static;
+//       opacity: 1;
+//       pointer-events: all;
+//     }
+
+//     label,
+//     #menuItems ul {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: center;
+//       align-items: center;
+//       padding: 0;
+//       margin: 0;
+//       gap: $size-42;
+//       @include setFont($fs-dt-menu, $lh-dt-menu, $ls-dt-menu);
+//     }
+//   }
+// }

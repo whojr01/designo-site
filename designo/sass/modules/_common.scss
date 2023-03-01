@@ -160,6 +160,7 @@ img {
   .btn:hover {
     background-color: $clr-secondary-color;
     cursor: pointer;
+    outline: none;
   }
 
   .locimg {

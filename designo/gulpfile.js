@@ -27,6 +27,8 @@ if ("NODE_ENV" in process.env && process.env.NODE_ENV.trim() === "production") {
   LOCDEV = ".";
 }
 
+console.log("locdev", LOCDEV);
+
 function processURLs() {
   return src("./*.html").pipe(replace("%HOME_PATH%", LOCDEV)).pipe(dest("build/"));
 }
@@ -40,6 +42,10 @@ function buildStyles() {
     .pipe(gulp.dest("./css"));
 }
 
+function buildJSDist() {
+  return gulp.src(["./js/**/*.js"]).pipe(gulp.dest("./build/js"));
+}
+
 function buildCSSDist() {
   return gulp
     .src(["./css/**/*.css", "./css/**/*.map"])
@@ -48,6 +54,7 @@ function buildCSSDist() {
 }
 
 function buildHTMLDist() {
+  console.log("LocDev ", LOCDEV);
   return gulp.src("./*.html").pipe(debug()).pipe(replace("%HOME_PATH%", LOCDEV)).pipe(gulp.dest("./build/"));
 }
 
@@ -55,8 +62,9 @@ function versionFiles() {
   return gulp.src("./build/**/*").pipe(addVersionString.revision(versionConfig)).pipe(debug()).pipe(gulp.dest("./build/"));
 }
 
-exports.buildStyles = gulp.series(buildStyles, buildHTMLDist, buildCSSDist, versionFiles);
+exports.buildStyles = gulp.series(buildStyles, buildHTMLDist, buildCSSDist, buildJSDist, versionFiles);
 exports.watch = function () {
-  gulp.watch("./sass/**/*.scss", series(buildStyles, buildHTMLDist, buildCSSDist));
+  gulp.watch("./sass/**/*.scss", series(buildStyles, buildHTMLDist, buildCSSDist, buildJSDist));
   gulp.watch("./*.html", buildHTMLDist);
+  gulp.watch("./js/**/*.js", buildJSDist);
 };
